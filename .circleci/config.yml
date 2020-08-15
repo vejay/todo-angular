@@ -13,4 +13,10 @@ jobs:
             - run:
                 name: 'Verifying code is checked out'
                 command: ls -al
+            - run:
+                name: 'Build application'
+                command: npm run build 
+            - run:
+                name: 'Unit Tests'
+                command: npm run test
 
