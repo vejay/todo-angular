@@ -15,8 +15,7 @@ jobs:
                 command: ls -al
             - run:
                 name: 'Build application'
-                command: npm run build 
+                command: yarn build 
             - run:
                 name: 'Unit Tests'
-                command: npm run test
-
+                command: yarn test
