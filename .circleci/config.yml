@@ -6,11 +6,6 @@ jobs:
         steps: 
             - checkout
             - run:
-                name: First step
-                command: |
-                    echo 'Hello world'    
-                    echo 'This is delivery pipeline'
-            - run:
                 name: 'Verifying code is checked out'
                 command: ls -al
             - run:
