@@ -14,8 +14,11 @@ jobs:
                 name: 'Verifying code is checked out'
                 command: ls -al
             - run:
+                name: 'Install Packages'
+                command: yarn install
+            - run:
                 name: 'Build application'
-                command: yarn build 
+                command: yarn build
             - run:
                 name: 'Unit Tests'
                 command: yarn test
