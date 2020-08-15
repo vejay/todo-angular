@@ -21,4 +21,4 @@ jobs:
                 command: yarn build
             - run:
                 name: 'Unit Tests'
-                command: yarn test
+                command: yarn test 
