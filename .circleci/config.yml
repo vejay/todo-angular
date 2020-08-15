@@ -24,7 +24,7 @@ jobs:
                     docker build -t vasanthapuram.azurecr.io/todo:1.0 . 
             - run:
                 command: |
-                    docker login --username $DOCKER_USER --password $DOCKER_PASS
+                    docker login --username $DOCKER_USER --password $DOCKER_PASS vasanthapuram.azurecr.io
             - run:
                 command: | 
                     docker push vasanthapuram.azurecr.io/todo:1.0                    
