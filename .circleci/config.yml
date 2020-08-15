@@ -7,5 +7,5 @@ jobs:
             - run:
                 name: First step
                 command: |
-                    - echo 'Hello world'    
-                    - echo 'This is delivery pipeline'
+                    echo 'Hello world'    
+                    echo 'This is delivery pipeline'
