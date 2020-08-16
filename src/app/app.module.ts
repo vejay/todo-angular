@@ -6,6 +6,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +17,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoAddComponent } from './todo-add/todo-add.component';
 import { HeaderComponent } from './header/header.component';
 import { AddDialogComponent } from './add-dialog/add-dialog.component';
+import { LoginComponent } from './login/login.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +27,8 @@ import { AddDialogComponent } from './add-dialog/add-dialog.component';
     TodoAddComponent,
     HeaderComponent,
     AddDialogComponent,
+    LoginComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,9 +37,14 @@ import { AddDialogComponent } from './add-dialog/add-dialog.component';
     MatToolbarModule,
     MatButtonModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    FlexLayoutModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [LoginComponent]
 })
 export class AppModule { }
