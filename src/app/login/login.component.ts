@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ANALYZE_FOR_ENTRY_COMPONENTS } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +12,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  login(): void {
+    console.log('login called ');
+    alert('Login called');
+  }
 }
