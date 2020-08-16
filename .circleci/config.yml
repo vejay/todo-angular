@@ -16,8 +16,6 @@ jobs:
             - run:
                 name: 'Build application'
                 command: yarn build
-            - run:
-                name: 'Unit Tests'                
             - run: 
                 command: |
                     docker build -t vasanthapuram.azurecr.io/todo:1.0 . 
