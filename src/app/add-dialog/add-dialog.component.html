@@ -1,11 +1,34 @@
 <h1 mat-dialog-title color="primary">Add Item</h1>
 <mat-dialog-content>
-    <p>
-        Do you want to save ?
-    </p>
+    <form [formGroup]="addItemForm" class="add-item-form" (submit)="saveItem()">
+        <mat-form-field>
+            <input type="text" matInput placeholder="Task" formControlName="item">
+        </mat-form-field>
+        <br/>
+        <mat-form-field>
+            <input type="text" matInput placeholder="Description" formControlName="desc">
+        </mat-form-field>      
+    </form>
 </mat-dialog-content>
-
 <mat-dialog-actions>
-    <button mat-button color="primary" (click)="saveItem()">Save</button>
-    <button mat-button color="primary" (click)="cancelDialog()">Cancel</button>
+    <button mat-button color="primary" type="submit">Save</button>
+    <button mat-button color="background" (click)="cancelDialog()">Cancel</button>
 </mat-dialog-actions>
+
+
+
+<!-- <div fxLayoutAlign="center center" fxFlexFill class='main-div'>
+    <mat-card fxFlex="25">
+        <mat-toolbar color="primary">Login</mat-toolbar>
+        <form [formGroup]="loginForm" class='login-form' (ngSubmit)="login()" fxLayoutAlign="stretch" fxLayout="column">
+            <mat-form-field>
+                <input type="text" matInput placeholder="Username" formControlName="username">
+            </mat-form-field>
+            <br/>
+            <mat-form-field>
+                <input matInput type="password" placeholder="Password" formControlName="password">
+            </mat-form-field>
+            <button mat-raised-button type="submit">Login</button>
+        </form>    
+    </mat-card>
+</div> -->
