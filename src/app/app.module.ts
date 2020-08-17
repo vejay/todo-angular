@@ -11,6 +11,7 @@ import { MatInputModule} from '@angular/material/input';
 import { MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,7 +30,7 @@ import { LandingComponent } from './landing/landing.component';
     HeaderComponent,
     AddDialogComponent,
     LoginComponent,
-    LandingComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +46,10 @@ import { LandingComponent } from './landing/landing.component';
     MatCardModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [LoginComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,7 @@
 import { Component, OnInit, ANALYZE_FOR_ENTRY_COMPONENTS } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +10,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
   loginForm = new FormGroup({
-      username: new FormControl(''),
-      password: new FormControl('')
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])
   });
 
-  constructor() { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -20,8 +22,19 @@ export class LoginComponent implements OnInit {
   login(): void {
     console.log('login called ');
     console.log(this.loginForm.value);
-    if(this.validate()) {
+
+    if (this.loginForm.valid && this.validate()) { // TODO VKV: Make this.validate() method part of the validator.
+      /*this.authService.login(this.loginForm.value).subscribe(result => {
+        if(result.success) {
+          console.log(result.message);
+        } else {
+          console.log(result.message);
+        }
+      }); */
+
       console.log('Succeeded');
+      this.router.navigate(['/todo']);
+
     } else {
       console.log('Failed');
     }
@@ -30,7 +43,6 @@ export class LoginComponent implements OnInit {
   validate(): boolean {
     if ((this.loginForm.value.username === 'akila'  && this.loginForm.value.password === 'akila')
       || (this.loginForm.value.username === 'vijay' && this.loginForm.value.password === 'vijay')) {
-      alert('Yes! You\'re In');
       return true;
     } else  {
       alert('Sorry, No Entry :(');
