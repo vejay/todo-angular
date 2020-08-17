@@ -1,7 +1,7 @@
 <mat-toolbar color="primary" class="parent">
     <span>Vasanthapuram Family Tasks</span>
     <div class="right">
-        <div class="uname">akila</div>
+        <div class="uname">{{userService.username}}</div>
         <button mat-button (click)="signOut()" color="accent" class="signout">Sign Out</button>
     </div>
 </mat-toolbar>

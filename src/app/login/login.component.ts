@@ -1,7 +1,8 @@
-import { Component, OnInit, ANALYZE_FOR_ENTRY_COMPONENTS } from '@angular/core';
+import { Component, OnInit, ANALYZE_FOR_ENTRY_COMPONENTS, Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../services/auth.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
       password: new FormControl('', [Validators.required])
   });
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService,
+              private userService: UserService) { }
 
   ngOnInit(): void {
   }
@@ -33,8 +35,9 @@ export class LoginComponent implements OnInit {
       }); */
 
       console.log('Succeeded');
-      this.router.navigate(['/todo']);
+      this.userService.username = this.loginForm.value.username;
 
+      this.router.navigate(['/todo']);
     } else {
       console.log('Failed');
     }
