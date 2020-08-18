@@ -13,6 +13,12 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "hi": "src/locale/messages.hi.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -22,6 +28,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "localize": ["hi"],
             "aot": true,
             "assets": [
               "src/favicon.ico",
@@ -60,6 +67,13 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "hi":{
+              "aot": true,
+              "outputPath": "dist/todo-app-hi",
+              "i18nFile": "src/locale/messages.hi.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "fr"
             }
           }
         },
@@ -72,6 +86,9 @@
           "configurations": {
             "production": {
               "browserTarget": "todo-app:build:production"
+            },
+            "hi": {
+              "browserTarget": "todo-app:build:hi"
             }
           }
         },
