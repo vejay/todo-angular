@@ -73,7 +73,14 @@
               "outputPath": "dist/todo-app-hi",
               "i18nFile": "src/locale/messages.hi.xlf",
               "i18nFormat": "xlf",
-              "i18nLocale": "fr"
+              "i18nLocale": "hi"
+            },
+            "ta":{
+              "aot": true,
+              "outputPath": "dist/todo-app-ta",
+              "i18nFile": "src/locale/messages.ta.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ta"
             }
           }
         },
@@ -89,6 +96,9 @@
             },
             "hi": {
               "browserTarget": "todo-app:build:hi"
+            },
+            "ta": {
+              "browserTarget": "todo-app:build:ta"
             }
           }
         },
